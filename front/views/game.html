@@ -1,0 +1,25 @@
+<div>
+
+    <table  cellspacing="2">
+        <tr ng-repeat="row in matrice">
+            <td ng-repeat="item in row track by $index">
+                <div class="pion" ng-class="item"></div>
+            </td>
+        </tr>
+    </table>
+
+
+
+    <div class="winner" ng-if="winner">LE GAGNANT EST : {{winner}}</div>
+
+    <div class="players">
+        <div ng-class="{'connected' : players.J.id}">JOUEUR JAUNE</div><br />
+        <div ng-class="{'connected' : players.R.id}">JOUEUR ROUGE</div>
+    </div>
+
+    <div class="classement">
+        <div ng-repeat="(player, count) in winner_count track by $index">
+            {{player}}  <span class="pull-right">{{count}}</span>
+        </div>
+    </div>
+</div>
